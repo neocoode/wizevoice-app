@@ -27,8 +27,8 @@ export const ZoomControls: React.FC<ZoomControlsProps> = ({ onZoomIn, onZoomOut 
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    right: 16,
-    bottom: 16,
+    right: 20,
+    bottom: 40,
     backgroundColor: 'white',
     borderRadius: 8,
     padding: 8,

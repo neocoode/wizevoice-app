@@ -54,6 +54,8 @@ export const MapView: React.FC = () => {
       <MapboxGL.MapView 
         style={styles.map}
         styleURL={MapboxGL.StyleURL.Street}
+        logoEnabled={false}
+        attributionEnabled={false}
       >
         <Camera
           ref={cameraRef}
