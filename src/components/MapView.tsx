@@ -1,13 +1,18 @@
 // Componente responsável por exibir o mapa, centralizar na localização do usuário e fornecer botões de zoom.
 // Consome o contexto ContextMapView para acessar estado e funções do mapa.
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import MapboxGL, { Camera, UserLocation } from '@rnmapbox/maps';
 import { useMapView } from '../hooks/useMapView';
+import { useRouteToDestination } from '../hooks/useRouteToDestination';
+import { DestinationPin } from './DestinationPin';
 import { MyCursor } from './MyCursor';
 import { ZoomControls } from './ZoomControls';
+
+
+
 
 export const MapView: React.FC = () => {
   
@@ -20,10 +25,26 @@ export const MapView: React.FC = () => {
     handleZoomOut,
     onUserLocationUpdate,
     cameraRef,
+    destination,
+    setDestination,
   } = useMapView();
 
-  console.log('[MapView] Estado inicial:', { userLocation, errorMsg, isLoading, zoom });
+  // Hook para buscar rota
+  const { route } = useRouteToDestination({
+    profile: 'driving',
+    origin: userLocation,
+    destination,
+  });
 
+  console.log('[MapView] Estado inicial:', { userLocation, errorMsg, isLoading, zoom, destination });
+  
+
+  // Define o destino apenas uma vez quando o componente monta
+  useEffect(() => {
+    console.log('[MapView] Definindo destino inicial');
+    setDestination([-46.515507, -23.536976]);
+  }, []);
+  
   if (isLoading) {
     console.log('[MapView] Carregando localização...');
     return (
@@ -47,7 +68,6 @@ export const MapView: React.FC = () => {
     onUserLocationUpdate(location);
   };
 
-  console.log('[MapView] Renderizando mapa com:', { userLocation, zoom });
 
   return (
     <View style={styles.container}>
@@ -70,6 +90,24 @@ export const MapView: React.FC = () => {
           onUpdate={handleUserLocationUpdate}
         />
         <MyCursor coordinate={userLocation} />
+          {destination && (
+            <>
+              <DestinationPin coordinate={destination} />
+              {route && (
+                <MapboxGL.ShapeSource id="routeSource" shape={route}>
+                  <MapboxGL.LineLayer
+                    id="routeLine"
+                    style={{
+                      lineColor: '#007AFF',
+                      lineWidth: 4,
+                      lineCap: 'round',
+                      lineJoin: 'round',
+                    }}
+                  />
+                </MapboxGL.ShapeSource>
+              )}
+            </>
+          )}
       </MapboxGL.MapView>
       <ZoomControls onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />
     </View>

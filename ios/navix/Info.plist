@@ -24,14 +24,24 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
-		<key>NSAllowsArbitraryLoads</key>
-		<false/>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api.mapbox.com</key>
+			<dict>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+			<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+			</dict>
+		</dict>
 	</dict>
+
+
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Precisamos da sua localização para mostrar o mapa</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

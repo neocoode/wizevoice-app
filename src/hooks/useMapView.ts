@@ -11,33 +11,37 @@ export function useMapView() {
   
   const env = useEnv();
   const locate = useLocateRuntime();
-  const zoom = useZoom(22, 10, 22);
+  const { zoom, handleZoomIn, handleZoomOut, setZoom } = useZoom(18, 5, 22);
 
   // Localização
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [destination, setDestination] = useState<[number, number] | null>(null);
 
   // Camera ref
   const cameraRef = useRef<MapboxGL.Camera>(null);
 
   // Configuração do Mapbox
   useEffect(() => {
-    console.log('[useMapView, ] Configurando token do Mapbox', env.mapbox);
+    console.log('[useMapView] Configurando token do Mapbox', env.mapbox);
+    MapboxGL.setAccessToken(env.mapbox.token);
+    MapboxGL.setTelemetryEnabled(true);
   }, [env.mapbox.token]);
 
+  // Efeito para atualizar a câmera quando o zoom ou localização mudar
   useEffect(() => {
     console.log('[useMapView] Localização do usuário atualizada:', locate.userLocation);
-    console.log('[useMapView] Zoom atual:', zoom.zoom);
+    console.log('[useMapView] Zoom atual:', zoom);
     
     if (locate.userLocation && cameraRef.current) {
       console.log('[useMapView] Atualizando câmera com nova localização');
       cameraRef.current.setCamera({
         centerCoordinate: locate.userLocation,
-        zoomLevel: zoom.zoom,
+        zoomLevel: zoom,
         animationDuration: 1000,
       });
     }
-  }, [locate.userLocation, zoom.zoom]);
+  }, [locate.userLocation, zoom]);
 
   useEffect(() => {
     if (locate.errorMsg) {
@@ -53,9 +57,14 @@ export function useMapView() {
 
   return {
     ...locate,
-    ...zoom,
+    zoom,
+    handleZoomIn,
+    handleZoomOut,
+    setZoom,
     errorMsg,
     isLoading,
     cameraRef,
+    destination,
+    setDestination,
   };
 } 
