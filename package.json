@@ -4,14 +4,28 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --device",
+    "ios:16ProMax": "yarn clean:ios && cp envs/.env.local .env && react-native run-ios --simulator=\"iPhone 16 Pro Max\"",
+    "ios:dev": "cp envs/.env.dev .env && react-native run-ios --device",
+    "ios:prd": "cp envs/.env.prd .env && react-native run-ios --device",
+    "ios:release": "cp envs/.env.prd .env && cd ios && xcodebuild -workspace navix.xcworkspace -scheme navix -configuration Release -sdk iphoneos build && cd ..",
+    "android:dev": "cp envs/.env.dev .env && react-native run-android",
+    "android:local": "cp envs/.env.local .env && react-native run-android",
+    "android:prd": "cp envs/.env.prd .env && react-native run-android",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "clean:ios": "xcrun simctl uninstall booted com.navix",
+    "clean:android": "adb uninstall com.navix",
+    "clean:all": "yarn clean:ios && yarn clean:android",
+    "reinstall": "rm -rf node_modules yarn.lock && yarn install && cd ios && pod install && cd .."
   },
   "dependencies": {
+    "@react-native-community/geolocation": "^3.4.0",
+    "@rnmapbox/maps": "^10.1.38",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-native": "0.79.2",
+    "react-native-dotenv": "^3.4.11"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
