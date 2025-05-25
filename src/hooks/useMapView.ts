@@ -11,7 +11,7 @@ export function useMapView() {
   
   const env = useEnv();
   const locate = useLocateRuntime();
-  const zoom = useZoom(15, 5, 20);
+  const zoom = useZoom(22, 10, 22);
 
   // Localização
   const [errorMsg, setErrorMsg] = useState<string | null>(null);

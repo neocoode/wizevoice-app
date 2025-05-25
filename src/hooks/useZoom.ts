@@ -8,7 +8,7 @@ interface UseZoom {
   setZoom: (value: number) => void;
 }
 
-export function useZoom(initialZoom: number = 15, minZoom: number = 5, maxZoom: number = 20): UseZoom {
+export function useZoom(initialZoom: number = 15, minZoom: number = 5, maxZoom: number = 18): UseZoom {
   const [zoom, setZoom] = useState<number>(initialZoom);
 
   const handleZoomIn = () => setZoom((prev) => Math.min(prev + 1, maxZoom));
