@@ -19,6 +19,7 @@ export const MapView: React.FC = () => {
     handleZoomIn,
     handleZoomOut,
     onUserLocationUpdate,
+    cameraRef,
   } = useMapView();
 
   console.log('[MapView] Estado inicial:', { userLocation, errorMsg, isLoading, zoom });
@@ -55,9 +56,12 @@ export const MapView: React.FC = () => {
         styleURL={MapboxGL.StyleURL.Street}
       >
         <Camera
+          ref={cameraRef}
           zoomLevel={zoom}
           centerCoordinate={userLocation}
           followUserLocation
+          followUserMode={MapboxGL.UserTrackingMode.Follow}
+          followZoomLevel={zoom}
         />
         <UserLocation
           visible={true}
