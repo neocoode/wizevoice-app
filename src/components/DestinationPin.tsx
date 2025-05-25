@@ -18,7 +18,7 @@ export const DestinationPin: React.FC<DestinationPinProps> = ({ coordinate }) =>
       coordinate={coordinate}
       title="Destino"
     >
-      <MapPin name={EPins.FINISH_DESTINATION} size={16} color="#00d" />
+      <MapPin name={EPins.FINISH_DESTINATION} size={30} color="#00d" />
     </PointAnnotation>
   );
 };

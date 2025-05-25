@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 // Componente responsável por exibir o mapa, centralizar na localização do usuário e fornecer botões de zoom.
 // Consome o contexto ContextMapView para acessar estado e funções do mapa.
 
@@ -37,12 +38,10 @@ export const MapView: React.FC = () => {
   });
 
   console.log('[MapView] Estado inicial:', { userLocation, errorMsg, isLoading, zoom, destination });
-  
 
   // Define o destino apenas uma vez quando o componente monta
   useEffect(() => {
-    console.log('[MapView] Definindo destino inicial');
-    setDestination([-46.515507, -23.536976]);
+    setDestination([-46.676934, -23.579272]);
   }, []);
   
   if (isLoading) {
@@ -98,7 +97,13 @@ export const MapView: React.FC = () => {
                   <MapboxGL.LineLayer
                     id="routeLine"
                     style={{
-                      lineColor: '#007AFF',
+                      lineColor: [
+                        'case',
+                        ['in', ['get', 'congestion', ['get', 'properties']], ['literal', ['low']]], '#4CAF50',
+                        ['in', ['get', 'congestion', ['get', 'properties']], ['literal', ['moderate']]], '#FFC107',
+                        ['in', ['get', 'congestion', ['get', 'properties']], ['literal', ['severe']]], '#F44336',
+                        '#007AFF',
+                      ],
                       lineWidth: 4,
                       lineCap: 'round',
                       lineJoin: 'round',

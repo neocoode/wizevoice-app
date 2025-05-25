@@ -3,8 +3,10 @@ import axios from 'axios';
 export interface GetDirectionsParams {
   accessToken: string;
   coordinates: [number, number][]; // [start, end]
-  profile?: 'driving' | 'walking' | 'cycling';
+  profile?: 'driving' | 'walking' | 'cycling' | 'driving-traffic';
   geometries?: 'geojson';
+  annotations?: string[];
+  alternatives?: boolean;
 }
 
 export async function getDirections({
@@ -12,24 +14,34 @@ export async function getDirections({
   coordinates,
   profile = 'driving',
   geometries = 'geojson',
+  annotations = ['congestion', 'speed', 'distance'],
+  alternatives = true,
 }: GetDirectionsParams): Promise<any> {
-  console.log('[getDirections] Chamado com:', { accessToken, coordinates, profile, geometries });
   const [start, end] = coordinates;
+  let queryParams = new URLSearchParams();
 
-  const url = `https://api.mapbox.com/directions/v5/mapbox/${profile}/${start[0]},${start[1]};${end[0]},${end[1]}?geometries=${geometries}&overview=full&access_token=${accessToken}`;
-  console.log('[getDirections] URL:', url);
+  if (geometries) { queryParams.append('geometries', geometries); }
+  if (annotations?.length) { queryParams.append('annotations', annotations.join(',')); }
+  if (alternatives) { queryParams.append('alternatives', alternatives.toString()); }
+  queryParams.append('access_token', accessToken);
+
+  const url = `https://api.mapbox.com/directions/v5/mapbox/${profile}/` +
+    `${start[0]},${start[1]};${end[0]},${end[1]}` +
+    `?${queryParams.toString()}`;
+
   const response = await axios.get(url);
-  console.log('[getDirections] Resposta:', response.data);
   const route = response.data.routes?.[0];
-  console.log('[getDirections] Rota:', route);
   if (!route || !route.geometry) {
     throw new Error('Rota inválida');
   }
 
-  // Retorna um GeoJSON Feature
   return {
     type: 'Feature',
     geometry: route.geometry,
-    properties: {},
+    properties: {
+      congestion: route.legs?.[0]?.annotation?.congestion || [],
+      duration: route.duration,
+      distance: route.distance,
+    },
   };
 }

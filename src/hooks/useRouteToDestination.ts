@@ -11,13 +11,6 @@ interface UseRouteToDestinationProps {
   profile?: 'driving' | 'walking' | 'cycling';
 }
 
-function fetchWithTimeout<T>(promise: Promise<T>, timeout = 10000): Promise<T> {
-  return Promise.race([
-    promise,
-    new Promise<T>((_, reject) => setTimeout(() => reject(new Error('Timeout')), timeout)),
-  ]);
-}
-
 export function useRouteToDestination({ origin, destination, profile }: UseRouteToDestinationProps) {
   const { mapbox } = useEnv();
   const [route, setRoute] = useState<any>(null);
@@ -36,7 +29,7 @@ export function useRouteToDestination({ origin, destination, profile }: UseRoute
       try {
         const feature = await getDirections({
           accessToken: mapbox.token,
-          profile: profile || 'driving',
+          profile:  'driving-traffic', //profile || 'driving',
           coordinates: [origin as [number, number], destination as [number, number]],
         });
 
