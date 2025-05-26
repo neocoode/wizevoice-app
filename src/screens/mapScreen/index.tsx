@@ -1,8 +1,8 @@
 import React from 'react';
-import * as St from './styles';
 import { MapView } from '../../components/MapView';
+import * as St from './styles';
 
-const ViewMap = () => {
+const MapScreen = () => {
   return (
     <St.Container>
       <MapView />
@@ -10,4 +10,4 @@ const ViewMap = () => {
   );
 };
 
-export default ViewMap;
+export default MapScreen;

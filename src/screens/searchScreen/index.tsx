@@ -1,7 +1,7 @@
 import React from 'react';
 import * as St from './styles';
 
-const ViewSearch = () => {
+const SearchScreen = () => {
   return (
     <St.Container>
       <St.Text>View Search</St.Text>
@@ -9,4 +9,4 @@ const ViewSearch = () => {
   );
 };
 
-export default ViewSearch;
+export default SearchScreen;

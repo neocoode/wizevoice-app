@@ -1,34 +1,35 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
+// stores/store.ts
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import createSagaMiddleware from 'redux-saga';
+import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
+import { persistReducer, persistStore } from 'redux-persist';
 
-import { rootReducer } from './rootReducer';
-import rootSaga from './rootSaga';
-
-const sagaMiddleware = createSagaMiddleware();
+// Import slices
+import allReducers from '../store';
 
 const persistConfig = {
-      key: 'root',
-      storage: AsyncStorage,
-      whitelist: ['driver'],
+  key: 'root',
+  storage: AsyncStorage,
+  whitelist: ['user'], // quais slices você quer persistir
 };
+
+const rootReducer = combineReducers({
+  ...allReducers,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-      reducer: persistedReducer,
-      middleware: (getDefaultMiddleware) => {
-            const middlewares = getDefaultMiddleware({
-                  serializableCheck: {
-                        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
-                  },
-            });
-            return middlewares.concat(sagaMiddleware);
-      },
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+      thunk: true,
+    }),
 });
 
-sagaMiddleware.run(rootSaga);
 export const persistor = persistStore(store);
+
+// Tipos
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch; 
+export type AppDispatch = typeof store.dispatch;

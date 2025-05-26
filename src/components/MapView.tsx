@@ -121,7 +121,9 @@ export const MapView: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
+    width: '100%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },

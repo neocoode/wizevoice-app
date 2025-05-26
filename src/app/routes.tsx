@@ -1,9 +1,9 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 
-import ViewMap from '../views/viewMap';
-import ViewSearch from '../views/viewSearch';
+import ViewMap from '../screens/mapScreen';
+import ViewSearch from '../screens/searchScreen';
 
 export type RootStackParamList = {
   ViewMap: undefined;
