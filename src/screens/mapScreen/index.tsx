@@ -1,11 +1,22 @@
 import React from 'react';
-import { MapView } from '../../components/MapView';
+
+
+
 import * as St from './styles';
+import CustomBottomSheet from '../../components/customBottomSheet';
+import SearchMapScreen from '../searchMapScreeen';
 
 const MapScreen = () => {
+  const sheetRef = React.useRef(null);
+
   return (
     <St.Container>
-      <MapView />
+      <St.MapView>
+        {/* <MapView /> */}
+      </St.MapView>
+      <CustomBottomSheet pages={[
+        <SearchMapScreen />
+      ]} pageSelected={0} />
     </St.Container>
   );
 };

@@ -1914,6 +1914,30 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNVectorIcons (10.2.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - SocketRocket (0.7.1)
   - Turf (2.8.0)
   - Yoga (0.0.0)
@@ -1996,6 +2020,7 @@ DEPENDENCIES:
   - "rnmapbox-maps (from `../node_modules/@rnmapbox/maps`)"
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -2159,6 +2184,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNSVG:
     :path: "../node_modules/react-native-svg"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -2242,6 +2269,7 @@ SPEC CHECKSUMS:
   rnmapbox-maps: 0e88ce4f854bf624612e5255d1a2d61edf3c605f
   RNScreens: 5621e3ad5a329fbd16de683344ac5af4192b40d3
   RNSVG: 8a1054afe490b5d63b9792d7ae3c1fde8c05cdd0
+  RNVectorIcons: 941a39b5d3b9d8cf8ac2e2fc09b07bfafbcf9796
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Turf: aa2ede4298009639d10db36aba1a7ebaad072a5e
   Yoga: c758bfb934100bb4bf9cbaccb52557cee35e8bdf

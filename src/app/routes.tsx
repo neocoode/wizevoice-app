@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import ViewMap from '../screens/mapScreen';
-import ViewSearch from '../screens/searchScreen';
 
 export type RootStackParamList = {
   ViewMap: undefined;
@@ -22,7 +21,6 @@ const Routes = () => {
         }}
       >
         <Stack.Screen name="ViewMap" component={ViewMap} />
-        <Stack.Screen name="ViewSearch" component={ViewSearch} />
       </Stack.Navigator>
     </NavigationContainer>
   );

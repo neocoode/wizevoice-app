@@ -3,14 +3,15 @@
 // Consome o contexto ContextMapView para acessar estado e funções do mapa.
 
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text } from 'react-native';
 
 import MapboxGL, { Camera, UserLocation } from '@rnmapbox/maps';
-import { useMapView } from '../hooks/useMapView';
-import { useRouteToDestination } from '../hooks/useRouteToDestination';
-import { DestinationPin } from './DestinationPin';
-import { MyCursor } from './MyCursor';
-import { ZoomControls } from './ZoomControls';
+import { useMapView } from '../../hooks/useMapView';
+import { useRouteToDestination } from '../../hooks/useRouteToDestination';
+import { DestinationPin } from '../DestinationPin';
+import { MyCursor } from '../MyCursor';
+import { ZoomControls } from '../ZoomControls';
+import * as S from './styles';
 
 
 
@@ -47,18 +48,18 @@ export const MapView: React.FC = () => {
   if (isLoading) {
     console.log('[MapView] Carregando localização...');
     return (
-      <View style={styles.container}>
+      <S.Container>
         <Text>Carregando localização...</Text>
-      </View>
+      </S.Container>
     );
   }
 
   if (errorMsg) {
     console.log('[MapView] Erro:', errorMsg);
     return (
-      <View style={styles.container}>
+      <S.Container>
         <Text>Erro: {errorMsg}</Text>
-      </View>
+      </S.Container>
     );
   }
 
@@ -69,9 +70,9 @@ export const MapView: React.FC = () => {
 
 
   return (
-    <View style={styles.container}>
-      <MapboxGL.MapView 
-        style={styles.map}
+    <S.Container>
+      <MapboxGL.MapView
+        style={S.mapView}
         styleURL={MapboxGL.StyleURL.Street}
         logoEnabled={false}
         attributionEnabled={false}
@@ -115,20 +116,7 @@ export const MapView: React.FC = () => {
           )}
       </MapboxGL.MapView>
       <ZoomControls onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />
-    </View>
+    </S.Container>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  map: {
-    flex: 1,
-    width: '100%',
-  },
-});
