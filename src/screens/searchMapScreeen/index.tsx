@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import * as St from './styles';
 
@@ -10,7 +10,7 @@ const SearchMapScreen = () => {
     <St.Container>
       <St.InputWrapper>
         <St.IconButton>
-          <Icon name="search" size={22} color="#fff" style={{ opacity: 0.7 }} />
+          <MaterialIcons name="search" size={22} color="#fff" style={{ opacity: 0.7 }} />
         </St.IconButton>
         <St.SearchInput
           placeholder="Pesquisar"
@@ -19,7 +19,7 @@ const SearchMapScreen = () => {
           onChangeText={setSearch}
         />
         <St.IconButton>
-          <Icon name="mic" size={22} color="#fff" style={{ opacity: 0.7 }} />
+          <MaterialIcons name="mic" size={22} color="#fff" style={{ opacity: 0.7 }} />
         </St.IconButton>
       </St.InputWrapper>
     </St.Container>
