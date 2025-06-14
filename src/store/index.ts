@@ -1,5 +1,5 @@
-import driverReducer from './store.driver';
+import { mapsSlice } from './store.maps/store.maps.slice';
 
-const reducers = { driver:driverReducer };
+const reducers = { maps: mapsSlice.reducer };
 
 export default reducers;

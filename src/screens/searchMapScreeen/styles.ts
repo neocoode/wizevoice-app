@@ -21,8 +21,9 @@ export const InputWrapper = styled.View`
 export const SearchInput = styled.TextInput`
   display: flex;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0 8px;
+  flex: 1;
 `;
 
 export const IconButton = styled.TouchableOpacity`

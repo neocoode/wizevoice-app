@@ -2,10 +2,9 @@ import React from 'react';
 
 
 
-import CustomBottomSheet from '../../components/customBottomSheet';
 import { MapView } from '../../components/mapView';
-import SearchMapScreen from '../searchMapScreeen';
 
+import { SearchDestination } from './components';
 import * as St from './styles';
 
 const MapScreen = () => {
@@ -16,9 +15,7 @@ const MapScreen = () => {
       <St.MapView>
         <MapView />
       </St.MapView>
-      <CustomBottomSheet pages={[
-        <SearchMapScreen />
-      ]} pageSelected={0} />
+      <SearchDestination />      
     </St.Container>
   );
 };

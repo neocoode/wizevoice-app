@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		4B87A2CFA6ADF52AF372DAC6 /* libPods-navix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E473309417F796D99C2F8B /* libPods-navix.a */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A9C2D8F4826727D5ADFCD8A6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		D28A5D28DE9C4608F480B807 /* libPods-navix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C4DD203DF28A9B4769A308 /* libPods-navix.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04E473309417F796D99C2F8B /* libPods-navix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-navix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03032441D9C125F908895BC0 /* Pods-navix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navix.debug.xcconfig"; path = "Target Support Files/Pods-navix/Pods-navix.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* navix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = navix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = navix/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = navix/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = navix/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		272C182B16584F264CFB3D43 /* Pods-navix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navix.debug.xcconfig"; path = "Target Support Files/Pods-navix/Pods-navix.debug.xcconfig"; sourceTree = "<group>"; };
-		4F0F8C73C89DEBE7A235F691 /* Pods-navix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navix.release.xcconfig"; path = "Target Support Files/Pods-navix/Pods-navix.release.xcconfig"; sourceTree = "<group>"; };
 		56A16F252DF8E95F00F1D1B6 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/@react-native-vector-icons/material-icons/fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		56A16F272DF8EAE700F1D1B6 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
 		56A16F282DF8EAE700F1D1B6 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
@@ -44,6 +42,8 @@
 		56A16F392DF8EAE700F1D1B6 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = navix/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = navix/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86C4DD203DF28A9B4769A308 /* libPods-navix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-navix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B57E3E57DDBA40A7707758B4 /* Pods-navix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navix.release.xcconfig"; path = "Target Support Files/Pods-navix/Pods-navix.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B87A2CFA6ADF52AF372DAC6 /* libPods-navix.a in Frameworks */,
+				D28A5D28DE9C4608F480B807 /* libPods-navix.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				04E473309417F796D99C2F8B /* libPods-navix.a */,
+				86C4DD203DF28A9B4769A308 /* libPods-navix.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,8 +141,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				272C182B16584F264CFB3D43 /* Pods-navix.debug.xcconfig */,
-				4F0F8C73C89DEBE7A235F691 /* Pods-navix.release.xcconfig */,
+				03032441D9C125F908895BC0 /* Pods-navix.debug.xcconfig */,
+				B57E3E57DDBA40A7707758B4 /* Pods-navix.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -154,13 +154,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "navix" */;
 			buildPhases = (
-				F1844A7FCAC9ECE514B7DFEC /* [CP] Check Pods Manifest.lock */,
+				574772C3257AC16E4EE0ED8A /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2D5FA92DE9DE6AF93CE70BEA /* [CP] Embed Pods Frameworks */,
-				E6B938EE2E6918C49C0B38E5 /* [CP] Copy Pods Resources */,
+				25DCC2945EC8660F9842F1ED /* [CP] Embed Pods Frameworks */,
+				EE08150784360D2BDADD465C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,7 +232,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		2D5FA92DE9DE6AF93CE70BEA /* [CP] Embed Pods Frameworks */ = {
+		25DCC2945EC8660F9842F1ED /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,24 +249,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navix/Pods-navix-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E6B938EE2E6918C49C0B38E5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-navix/Pods-navix-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-navix/Pods-navix-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navix/Pods-navix-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1844A7FCAC9ECE514B7DFEC /* [CP] Check Pods Manifest.lock */ = {
+		574772C3257AC16E4EE0ED8A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,6 +271,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE08150784360D2BDADD465C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-navix/Pods-navix-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-navix/Pods-navix-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navix/Pods-navix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -304,7 +304,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 272C182B16584F264CFB3D43 /* Pods-navix.debug.xcconfig */;
+			baseConfigurationReference = 03032441D9C125F908895BC0 /* Pods-navix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -333,7 +333,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F0F8C73C89DEBE7A235F691 /* Pods-navix.release.xcconfig */;
+			baseConfigurationReference = B57E3E57DDBA40A7707758B4 /* Pods-navix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -2,7 +2,7 @@
 // Componente responsável por exibir o mapa, centralizar na localização do usuário e fornecer botões de zoom.
 // Consome o contexto ContextMapView para acessar estado e funções do mapa.
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Text } from 'react-native';
 
 import MapboxGL, { Camera, UserLocation } from '@rnmapbox/maps';
@@ -41,9 +41,9 @@ export const MapView: React.FC = () => {
   console.log('[MapView] Estado inicial:', { userLocation, errorMsg, isLoading, zoom, destination });
 
   // Define o destino apenas uma vez quando o componente monta
-  useEffect(() => {
-    setDestination([-46.676934, -23.579272]);
-  }, []);
+  // useEffect(() => {
+  //   setDestination([-46.676934, -23.579272]);
+  // }, []);
   
   if (isLoading) {
     console.log('[MapView] Carregando localização...');
