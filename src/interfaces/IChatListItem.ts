@@ -13,4 +13,6 @@ export interface IMessages {
   texto: string;
   sender: ESender;
   language: ELanguage;
-} 
+  audioPath?: string;
+  createdAt?: string;
+}

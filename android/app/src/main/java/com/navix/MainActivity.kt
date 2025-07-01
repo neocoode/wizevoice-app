@@ -1,4 +1,4 @@
-package com.navix
+package com.neocood.wizevoice
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

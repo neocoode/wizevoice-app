@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { FlatList } from 'react-native';
 
-import { ESender } from '../../interfaces/IAutor';
-import { ELanguage, IMessages } from '../../interfaces/IChatListItem';
+import { IMessages } from '../../interfaces/IChatListItem';
 import ChatMessage from '../ChatMessage';
 
 import { Container } from './styles';
@@ -25,11 +24,11 @@ const ChatList: React.FC<ChatListProps> = ({ mensagens }) => {
       <FlatList
         ref={flatListRef}
         data={mensagens}
-        renderItem={({ item }) => <ChatMessage texto={item.texto} sender={item.sender as ESender} language={item.language as ELanguage} />}
+        renderItem={({ item }) => <ChatMessage item={item} />}
         keyExtractor={item => item.id}
       />
     </Container>
   );
 };
 
-export default ChatList; 
+export default ChatList;

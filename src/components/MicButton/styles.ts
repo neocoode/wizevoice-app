@@ -2,8 +2,8 @@
 import styled from 'styled-components/native';
 
 export const BotaoMic = styled.TouchableOpacity<{ ativo?: boolean }>`
-  background-color: ${({ theme, ativo }: any) => (ativo ? theme.themeSelected.colors.micButtonActive : theme.themeSelected.colors.micButton)};
+  background-color: ${({ theme, ativo }: any) => (ativo ? theme.colors.micButtonActive : theme.colors.micButton)};
   border-radius: 32px;
   padding: 16px;
   elevation: 2;
-`; 
+`;

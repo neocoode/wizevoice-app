@@ -16,9 +16,9 @@
 
 /* Begin PBXFileReference section */
 		03032441D9C125F908895BC0 /* Pods-wizevoiceapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizevoiceapp.debug.xcconfig"; path = "Target Support Files/Pods-wizevoiceapp/Pods-wizevoiceapp.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* wizevoiceapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wizevoiceapp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "wizevoiceapp/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "wizevoiceapp/Info.plist"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* wizevoiceapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wizevoiceapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = wizevoiceapp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = wizevoiceapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = wizevoiceapp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		56A16F252DF8E95F00F1D1B6 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/@react-native-vector-icons/material-icons/fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		56A16F272DF8EAE700F1D1B6 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		56A16F382DF8EAE700F1D1B6 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		56A16F392DF8EAE700F1D1B6 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = wizevoiceapp/AppDelegate.swift; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "wizevoiceapp/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = wizevoiceapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86C4DD203DF28A9B4769A308 /* libPods-wizevoiceapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizevoiceapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57E3E57DDBA40A7707758B4 /* Pods-wizevoiceapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizevoiceapp.release.xcconfig"; path = "Target Support Files/Pods-wizevoiceapp/Pods-wizevoiceapp.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -68,7 +68,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 			);
-			name = "wizevoiceapp";
+			name = wizevoiceapp;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -166,8 +166,8 @@
 			);
 			dependencies = (
 			);
-			name = "wizevoiceapp";
-			productName = "wizevoiceapp";
+			name = wizevoiceapp;
+			productName = wizevoiceapp;
 			productReference = 13B07F961A680F5B00A75B9A /* wizevoiceapp.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -311,8 +311,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RB39YC6ND6;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "wizevoiceapp/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "wizevoiceapp";
+				INFOPLIST_FILE = wizevoiceapp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = wizevoiceapp;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -324,10 +324,15 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "wizevoiceapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neocoode.wizevoice;
+				PRODUCT_NAME = wizevoiceapp;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -340,8 +345,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RB39YC6ND6;
-				INFOPLIST_FILE = "wizevoiceapp/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "wizevoiceapp";
+				INFOPLIST_FILE = wizevoiceapp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = wizevoiceapp;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -353,9 +358,14 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "wizevoiceapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neocoode.wizevoice;
+				PRODUCT_NAME = wizevoiceapp;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

@@ -1,4 +1,4 @@
-import { IMessages } from "../../interfaces/IChatListItem";
+import { IMessages } from '../../interfaces/IChatListItem';
 
 export const nameStore = 'chat';
 

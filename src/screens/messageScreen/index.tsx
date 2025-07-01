@@ -5,11 +5,10 @@ import { useControl } from './useControl';
 
 const MessageScreen = () => {
   const { messages, listening,  toggleListening } = useControl();
-  console.log('🎨 Background color:');
   return (
     <S.Container>
       <S.ChatList>
-        <ChatList mensagens={messages} />
+        <ChatList mensagens={messages || []} />
       </S.ChatList>
       <S.Footer>
         <MicButton listening={listening} onPress={toggleListening} />

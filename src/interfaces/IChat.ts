@@ -1,6 +1,7 @@
 // Enum for chat status in English
 export enum EStatus {
-  Wait = 'Waiting...',
-  Stop = 'Stopping recording...'
+  Idle = 'Idle', // aguardando ação
+  Listening = 'Listening...', // gravando voz
+  Processing = 'Processing...', // após onSpeechEnd
+  Stopping = 'Stopping recording...', // enquanto o stopListening é chamado
 }
-    

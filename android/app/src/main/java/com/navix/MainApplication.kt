@@ -1,4 +1,4 @@
-package com.navix
+package com.neocood.wizevoice
 
 import android.app.Application
 import com.facebook.react.PackageList

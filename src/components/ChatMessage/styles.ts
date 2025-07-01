@@ -5,7 +5,7 @@ export const UsuarioMessage = styled.View`
   padding: 12px;
   border-radius: 16px;
   max-width: 80%;
-  background-color: ${({ theme }: any) => theme.themeSelected.colors.userMessage};
+  background-color: ${({ theme }: any) => theme.colors.userMessage};
   align-self: flex-end;
 `;
 
@@ -13,5 +13,5 @@ export const UsuarioMessage = styled.View`
 
 export const TextoMensagem = styled.Text`
   font-size: 16px;
-  color: ${({ theme }: any) => theme.themeSelected.colors.text};
-`; 
+  color: ${({ theme }: any) => theme.colors.text};
+`;

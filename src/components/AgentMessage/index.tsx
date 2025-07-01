@@ -1,40 +1,34 @@
 import React from 'react';
 import Tts from 'react-native-tts';
 
-import { ELanguage } from '../../interfaces/IChatListItem';
+import { IMessages } from '../../interfaces/IChatListItem';
 import { TextoMensagem } from '../ChatMessage/styles';
 import * as S from './styles';
 
 interface IAgentMessageProps {
-  texto: string;
-  language: ELanguage;
+  item: IMessages;
 }
 
-const AgentMessage: React.FC<IAgentMessageProps> = ({ texto, language }) => {
-  const handleSpeak = () => {
-    if (language === ELanguage.EN_US) {
-      Tts.setDefaultLanguage('en-US');
-      Tts.speak(texto);
+const AgentMessage: React.FC<IAgentMessageProps> = ({ item }) => {
+  const handleSpeak = async () => {
+    try {
+      await Tts.setDefaultLanguage(item.language);
+      Tts.speak(item.texto);
+    } catch (err) {
+      console.warn('Erro ao configurar TTS:', err);
     }
   };
 
-  if (language === ELanguage.EN_US) {
-    return (
-      <S.Row>
-        <S.TouchableOpacity onPress={handleSpeak} activeOpacity={0.7}>
-          <S.AgenteMessage>
-            <TextoMensagem>{texto}</TextoMensagem>
-          </S.AgenteMessage>
-        </S.TouchableOpacity>
-      </S.Row>
-    );
-  }
-
   return (
-    <S.AgenteMessage>
-      <TextoMensagem>{texto}</TextoMensagem>
-    </S.AgenteMessage>
-  )
+    <S.Row>
+      <S.TouchableOpacity onPress={handleSpeak} activeOpacity={0.7}>
+        <S.AgenteMessage>
+          <TextoMensagem>{item.texto}</TextoMensagem>
+        </S.AgenteMessage>
+      </S.TouchableOpacity>
+    </S.Row>
+  );
+
 };
 
-export default AgentMessage; 
+export default AgentMessage;

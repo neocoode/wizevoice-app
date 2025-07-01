@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 export const StatusText = styled.Text`
   text-align: center;
   font-size: 16px;
-  color: ${({ theme }: any) => theme.themeSelected.colors.statusBar};
+  color: ${({ theme }: any) => theme.colors.statusBar};
   margin-top: 8px;
   margin-bottom: 4px;
 `;
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default styles; 
+export default styles;

@@ -5,11 +5,12 @@ import { Provider } from 'react-redux';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import ThemeProvider from '../theme';
 import Routes from './routes';
 import { persistor, store } from './store';
 
 const App = () => {
-  
+
   useEffect(() => {
     MaterialIcons.loadFont(); // carrega uma vez ao iniciar o app
   }, []);
@@ -17,7 +18,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Routes />
+        <ThemeProvider>
+          <Routes />
+        </ThemeProvider>
       </PersistGate>
     </Provider>
   );

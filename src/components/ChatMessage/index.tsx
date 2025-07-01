@@ -1,24 +1,22 @@
 import React from 'react';
 
 import { ESender } from '../../interfaces/IAutor';
-import { ELanguage } from '../../interfaces/IChatListItem';
+import { IMessages } from '../../interfaces/IChatListItem';
 import AgentMessage from '../AgentMessage';
 import UserMessage from '../UserMessage';
 
 interface IChatMessageProps {
-  texto: string;
-  sender: ESender;
-  language: ELanguage;  
+  item: IMessages;
 }
 
-const ChatMessage: React.FC<IChatMessageProps> = ({ texto, sender, language   }) => {
-  return (sender === ESender.User ? (
-    <UserMessage texto={texto} />
+const ChatMessage: React.FC<IChatMessageProps> = ({ item }) => {
+  return (item.sender === ESender.User ? (
+    <UserMessage texto={item.texto} audioPath={item.audioPath} />
   ) : (
-    <AgentMessage texto={texto} language={language} />)
+    <AgentMessage item={item} />)
   );
 
-}
+};
 
 export default ChatMessage;
 

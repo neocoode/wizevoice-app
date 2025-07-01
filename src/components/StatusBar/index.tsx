@@ -10,4 +10,4 @@ const StatusBar: React.FC<StatusBarProps> = ({ status }) => (
   <StatusText>{status}</StatusText>
 );
 
-export default StatusBar; 
+export default StatusBar;
