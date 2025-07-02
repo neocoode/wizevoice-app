@@ -1,12 +1,8 @@
-// Explicação: Estilos da tela de mensagem agora usam styled-components e cores do tema.
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }: any) => {
-    console.log('🎨 Background color:', theme?.colors?.background);
-    return theme.colors.background;
-  }};
+  background-color: ${({ theme }: any) => theme.colors.background};
   padding-bottom: 50px;
   padding-top: 100px;
 `;

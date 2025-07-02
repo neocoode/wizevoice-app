@@ -4,14 +4,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "cp envs/.env.local .env && react-native run-ios ",
-    "ios:16ProMax": "yarn kill:ports && rm -rf node_modules yarn.lock && yarn cache clean --all && yarn install && cp envs/.env.local .env && yarn preinstall:ios && yarn react-native run-ios --simulator=\"iPhone 16 Pro Max\"",
-    "ios:dev": "cp envs/.env.local .env && react-native run-ios --device",
-    "ios:prd": "cp envs/.env.prd .env && react-native run-ios --device",
-    "ios:release": "cp envs/.env.prd .env && cd ios && xcodebuild -workspace wizevoiceapp.xcworkspace -scheme wizevoiceapp -configuration Release -sdk iphoneos build && cd ..",
-    "android:dev": "cp envs/.env.dev .env && react-native run-android",
-    "android:local": "cp envs/.env.local .env && react-native run-android",
-    "android:prd": "cp envs/.env.prd .env && react-native run-android",
+    "ios": "react-native run-ios ",
+    "log-ios": "npx react-native log-ios",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
@@ -37,6 +31,8 @@
     "react-native-audio-recorder-player": "^3.6.14",
     "react-native-dotenv": "^3.4.11",
     "react-native-fs": "^2.20.0",
+    "react-native-get-random-values": "^1.11.0",
+    "react-native-logs": "^5.3.0",
     "react-native-safe-area-context": "^5.4.1",
     "react-native-screens": "^4.10.0",
     "react-native-svg": "^15.12.0",
@@ -46,6 +42,7 @@
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
+    "redux-persist-transform-encrypt": "^5.1.1",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {

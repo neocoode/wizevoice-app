@@ -1,20 +1,13 @@
-import Voice from '@react-native-community/voice';
 import { useEffect, useRef, useState } from 'react';
 import { Alert, PermissionsAndroid, Platform } from 'react-native';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
-import RNFS from 'react-native-fs';
 
-import { EStatus } from '../../interfaces/IChat';
+import Voice from '@react-native-community/voice';
+
+import { EStatus } from '../../interfaces';
+import { getUniqueAudioPath } from '../../utils';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
-
-function getUniqueAudioPath() {
-  const filename = `audio_${Date.now()}.m4a`;
-  return Platform.select({
-    ios: filename,
-    android: `${RNFS.CachesDirectoryPath}/${filename}`,
-  })!;
-}
 
 export function useVoice() {
   const [status, setStatus] = useState<EStatus>(EStatus.Idle);
@@ -24,7 +17,7 @@ export function useVoice() {
   const gravacaoPathRef = useRef('');
   const isMounted = useRef(true);
 
-  async function solicitarPermissaoAudio() {
+  async function requestAudioPermission() {
     if (Platform.OS === 'android') {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.RECORD_AUDIO
@@ -39,7 +32,7 @@ export function useVoice() {
     finalTextoRef.current = '';
     setStatus(EStatus.Idle);
 
-    const permitido = await solicitarPermissaoAudio();
+    const permitido = await requestAudioPermission();
     if (!permitido) {
       Alert.alert('Permissão negada para usar o microfone');
       return;

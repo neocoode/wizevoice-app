@@ -7,25 +7,27 @@ import ChatMessage from '../ChatMessage';
 import { Container } from './styles';
 
 interface ChatListProps {
-  mensagens: IMessages[];
+  messages: IMessages[];
 }
 
-const ChatList: React.FC<ChatListProps> = ({ mensagens }) => {
+const ChatList: React.FC<ChatListProps> = ({ messages }) => {
   const flatListRef = useRef<FlatList<IMessages>>(null);
 
   useEffect(() => {
     if (flatListRef.current) {
       flatListRef.current.scrollToEnd({ animated: true });
     }
-  }, [mensagens]);
+  }, [messages]);
 
   return (
     <Container>
       <FlatList
         ref={flatListRef}
-        data={mensagens}
-        renderItem={({ item }) => <ChatMessage item={item} />}
-        keyExtractor={item => item.id}
+        data={messages}
+        renderItem={({ item }) => (
+          <ChatMessage item={item} />
+        )}
+        keyExtractor={(item) => item.id.toString()}
       />
     </Container>
   );
